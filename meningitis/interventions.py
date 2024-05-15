@@ -1,5 +1,3 @@
-# meningitis/interventions.py
-
 import numpy as np
 import starsim as ss
 

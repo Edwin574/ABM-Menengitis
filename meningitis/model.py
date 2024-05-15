@@ -1,4 +1,3 @@
-# meningitis/model.py
 
 import numpy as np
 import sciris as sc

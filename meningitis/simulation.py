@@ -1,5 +1,3 @@
-# meningitis/simulation.py
-
 import numpy as np
 import sciris as sc
 import starsim as ss
@@ -18,20 +16,17 @@ def make_sim(seed=1, n_timesteps=50, use_vaccine=False, timestep=10, prob=0.5, i
         dt=1.0,
         verbose=0,
         rand_seed=seed,
-        networks='random',
-        diseases=dict(
-            type='meningitis',
-            waning=0.009,
-        )
+        networks='random'
     )
 
     people = People(n_agents=2000, age_data=age_data)
+    meningitis = Meningitis()
 
     if use_vaccine:
         vaccine = Vaccine(timestep=timestep, prob=prob, imm_boost=imm_boost)
-        sim = ss.Sim(pars, people=people, interventions=vaccine)
+        sim = ss.Sim(pars, people=people, diseases=meningitis, interventions=vaccine)
     else:
-        sim = ss.Sim(pars, people=people)
+        sim = ss.Sim(pars, people=people, diseases=meningitis)
 
     return sim
 
