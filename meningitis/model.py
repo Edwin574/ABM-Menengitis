@@ -4,6 +4,7 @@ import numpy as np
 import sciris as sc
 import starsim as ss
 from starsim.diseases.sir import SIR
+import matplotlib.pyplot as plt
 
 __all__ = ['Meningitis']
 
@@ -164,9 +165,9 @@ class Meningitis(SIR):
         return new_cases, sources
         
     def plot(self):
-        fig = pl.figure()
+        fig = plt.figure()
         for rkey in ['susceptible', 'exposed', 'infected', 'recovered']:
-            pl.plot(self.results['n_' + rkey], label=rkey.title())
-        pl.legend()
-        pl.close()
+            plt.plot(self.results['n_' + rkey], label=rkey.title())
+        plt.legend()
+        plt.close()
         return fig

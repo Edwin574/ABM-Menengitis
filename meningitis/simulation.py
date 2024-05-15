@@ -7,6 +7,7 @@ from .people import People
 from .model import Meningitis
 from .interventions import Vaccine, Treatment
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def make_sim(seed=1, n_timesteps=50, use_vaccine=False, timestep=10, prob=0.5, imm_boost=2.0):
     age_data = pd.read_csv('data/nigeria_age.csv')
@@ -81,16 +82,16 @@ def vac_prob(probs=[0.3, 0.5]):
         xx = prob * 100
         title = f'Estimated impact: {median_diff:.0f} (90% CI: {lower_bound_diff:.0f}, {upper_bound_diff:.0f}) infections averted (Prob: {xx}%)'
         
-        pl.figure()
-        pl.title(title)
-        pl.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
-        pl.plot(time, median_baseline, label='Baseline')
-        pl.fill_between(time, lower_bound_vaccine, upper_bound_vaccine, alpha=0.5)
-        pl.plot(time, median_vaccine, label='With vaccine')
-        pl.xlabel('Time')
-        pl.ylabel('Number of people infected')
-        pl.legend()
-        pl.ylim(bottom=0)
-        pl.xlim(left=0)
-        pl.savefig(f'figs/vaccine_whole_pop{xx}.png')
-        pl.show()
+        plt.figure()
+        plt.title(title)
+        plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
+        plt.plot(time, median_baseline, label='Baseline')
+        plt.fill_between(time, lower_bound_vaccine, upper_bound_vaccine, alpha=0.5)
+        plt.plot(time, median_vaccine, label='With vaccine')
+        plt.xlabel('Time')
+        plt.ylabel('Number of people infected')
+        plt.legend()
+        plt.ylim(bottom=0)
+        plt.xlim(left=0)
+        plt.savefig(f'figs/vaccine_whole_pop{xx}.png')
+        plt.show()
