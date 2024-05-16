@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 sciris = "*"
-starsim = "*"
+starsim = "0.3.4"
 matplotlib = "*"
 streamlit = "*"
 
