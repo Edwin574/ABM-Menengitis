@@ -80,19 +80,19 @@ def vac_prob(probs=[0.3, 0.5]):
         xx = prob * 100
         title = f'Estimated impact: {median_diff:.0f} (90% CI: {lower_bound_diff:.0f}, {upper_bound_diff:.0f}) infections averted (Prob: {xx}%)'
         
-        plt.figure()
-        plt.title(title)
-        plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
-        plt.plot(time, median_baseline, label='Baseline')
-        plt.fill_between(time, lower_bound_vaccine, upper_bound_vaccine, alpha=0.5)
-        plt.plot(time, median_vaccine, label='With vaccine')
-        plt.xlabel('Time')
-        plt.ylabel('Number of people infected')
-        plt.legend()
-        plt.ylim(bottom=0)
-        plt.xlim(left=0)
-        plt.savefig(f'figs/vaccine_whole_pop{xx}.png')
-        plt.show()
+        # plt.figure()
+        # plt.title(title)
+        # plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
+        # plt.plot(time, median_baseline, label='Baseline')
+        # plt.fill_between(time, lower_bound_vaccine, upper_bound_vaccine, alpha=0.5)
+        # plt.plot(time, median_vaccine, label='With vaccine')
+        # plt.xlabel('Time')
+        # plt.ylabel('Number of people infected')
+        # plt.legend()
+        # plt.ylim(bottom=0)
+        # plt.xlim(left=0)
+        # plt.savefig(f'figs/vaccine_whole_pop{xx}.png')
+        # plt.show()
 
 ### Additional Simulations with Age-Specific Data
 
@@ -143,19 +143,19 @@ def vac_prob_age(probs=[0.5, 1], age_range=[0.75, 1.5]):
         xx = prob * 100
         title = f'Estimated impact: {median_diff:.0f} (90% CI: {lower_bound_diff:.0f}, {upper_bound_diff:.0f}) infections averted (Prob: {xx}%)'
         
-        plt.figure()
-        plt.title(title)
-        plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
-        plt.plot(time, median_baseline, label='Baseline')
-        plt.fill_between(time, lower_bound_vaccine, upper_bound_vaccine, alpha=0.5)
-        plt.plot(time, median_vaccine, label='With vaccine')
-        plt.xlabel('Time')
-        plt.ylabel('Number of people infected')
-        plt.legend()
-        plt.ylim(bottom=0)
-        plt.xlim(left=0)
-        plt.savefig(f'figs/vaccine_age{xx}.png')
-        plt.show()
+        # plt.figure()
+        # plt.title(title)
+        # plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
+        # plt.plot(time, median_baseline, label='Baseline')
+        # plt.fill_between(time, lower_bound_vaccine, upper_bound_vaccine, alpha=0.5)
+        # plt.plot(time, median_vaccine, label='With vaccine')
+        # plt.xlabel('Time')
+        # plt.ylabel('Number of people infected')
+        # plt.legend()
+        # plt.ylim(bottom=0)
+        # plt.xlim(left=0)
+        # plt.savefig(f'figs/vaccine_age{xx}.png')
+        # plt.show()
 
 def treat_prob(probs=[0.3, 0.5, 0.6, 0.8, 1]):
     for prob in probs:
@@ -203,18 +203,18 @@ def treat_prob(probs=[0.3, 0.5, 0.6, 0.8, 1]):
         median_diff = np.quantile(difference_results, 0.5)
         title = f'Estimated impact: {median_diff:.0f} (90% CI: {lower_bound_diff:.0f}, {upper_bound_diff:.0f}) infections averted (Prob: {prob})'
         
-        plt.figure()
-        plt.title(title)
-        plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
-        plt.plot(time, median_baseline, label='Baseline')
-        plt.fill_between(time, lower_bound_treatment, upper_bound_treatment, alpha=0.5)
-        plt.plot(time, median_treatment, label='With treatment')
-        plt.xlabel('Time')
-        plt.ylabel('Number of people infected')
-        plt.legend()
-        plt.ylim(bottom=0)
-        plt.xlim(left=0)
-        plt.show()
+        # plt.figure()
+        # plt.title(title)
+        # plt.fill_between(time, lower_bound_baseline, upper_bound_baseline, alpha=0.5)
+        # plt.plot(time, median_baseline, label='Baseline')
+        # plt.fill_between(time, lower_bound_treatment, upper_bound_treatment, alpha=0.5)
+        # plt.plot(time, median_treatment, label='With treatment')
+        # plt.xlabel('Time')
+        # plt.ylabel('Number of people infected')
+        # plt.legend()
+        # plt.ylim(bottom=0)
+        # plt.xlim(left=0)
+        # plt.show()
 
 def plot_more(sim, var, add=False, nrow=2, ncol=2, figsize=(8, 8)):
     if (ncol * nrow) > len(var):

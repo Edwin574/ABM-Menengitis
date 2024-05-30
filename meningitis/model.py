@@ -3,7 +3,7 @@ import numpy as np
 import sciris as sc
 import starsim as ss
 from starsim.diseases.sir import SIR
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 __all__ = ['Meningitis']
 
@@ -131,9 +131,9 @@ class Meningitis(SIR):
 
         net = sim.networks[0]
         contacts = net.contacts
-        rel_trans = (self.infectious & people.alive) * self.rel_trans
+        rel_trans = (self.infectious & people.alive) * self.rel_trans #relative transmission probability
         rel_trans[self.infected] *= self.pars.rel_beta_inf
-        rel_sus = (self.susceptible & people.alive) * self.rel_sus
+        rel_sus = (self.susceptible & people.alive) * self.rel_sus #relative susceptible rate
         p1p2b0 = [contacts.p1, contacts.p2]
         p2p1b1 = [contacts.p2, contacts.p1]
         for src, trg in [p1p2b0, p2p1b1]:
@@ -163,10 +163,10 @@ class Meningitis(SIR):
             
         return new_cases, sources
         
-    def plot(self):
-        fig = plt.figure()
-        for rkey in ['susceptible', 'exposed', 'infected', 'recovered']:
-            plt.plot(self.results['n_' + rkey], label=rkey.title())
-        plt.legend()
-        plt.close()
-        return fig
+    # def plot(self):
+    #     fig = plt.figure()
+    #     for rkey in ['susceptible', 'exposed', 'infected', 'recovered']:
+    #         plt.plot(self.results['n_' + rkey], label=rkey.title())
+    #     plt.legend()
+    #     plt.close()
+    #     return fig

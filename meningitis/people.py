@@ -3,7 +3,7 @@ import pandas as pd
 import starsim as ss
 
 class People(ss.People):
-    def __init__(self, n_agents=2000, age_data=None, asfr_data=None, deaths_data=None, *args, **kwargs):
+    def __init__(self, n_agents=5000, age_data=None, asfr_data=None, deaths_data=None, *args, **kwargs):
         super().__init__(n_agents=n_agents, *args, **kwargs)
         self.age_data = age_data
         self.asfr_data = asfr_data
