@@ -3,7 +3,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from meningitis.simulation import vac_prob, make_sim, vac_prob_age, treat_prob
+from meningitis.simulationv2 import vac_prob, make_sim, vac_prob_age, treat_prob
 
 def main():
     st.title("Meningitis Simulation")
